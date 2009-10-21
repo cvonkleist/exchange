@@ -40,7 +40,7 @@ when nil
   %s clear          interactively delete contents of .exchange dir
   %s install        create .exchange dir on server
 EOF
-  puts usage.gsub('%s', $0)
+  puts usage.gsub('%s', File.basename($0))
   exit 1
 else
   run('scp -r ' + quoted_list(ARGV) + ' %s:.exchange/' % SERVER)
